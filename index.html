@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darrel's Lounge Dash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Top HUD Bar -->
+        <header id="hud" class="hud hidden">
+            <div class="hud-brand">
+                <img src="assets/logo.jpg" alt="Store Logo" class="hud-logo">
+                <span class="hud-title">DARREL'S LOUNGE</span>
+            </div>
+
+            <div class="hud-stats">
+                <div class="stat-pill">
+                    <span>Score:</span>
+                    <strong id="score">0</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Time:</span>
+                    <strong id="time">60</strong>s
+                </div>
+                <div class="stat-pill">
+                    <span>Held Flavor:</span>
+                    <strong id="held-flavor">None</strong>
+                </div>
+            </div>
+
+            <div class="hud-actions">
+                <button id="restart-btn" type="button" class="btn btn-secondary">Restart</button>
+                <button id="menu-btn" type="button" class="btn btn-ghost">Main Menu</button>
+            </div>
+        </header>
+
+        <!-- Full Screen Game Canvas -->
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Start Menu Overlay (Play & Quit) -->
+        <section id="start-screen" class="overlay-screen">
+            <div class="menu-card">
+                <img src="assets/logo.jpg" alt="Shop Logo" class="menu-logo">
+                <h1 class="menu-title">DARREL'S LOUNGE DASH</h1>
+                <p class="menu-subtitle">
+                    Tap a flavor station so Darrel can grab it, then tap a matching customer to serve before their patience runs out.
+                </p>
+                <div class="menu-buttons">
+                    <button id="play-btn" type="button" class="btn btn-primary">Play</button>
+                    <button id="quit-btn" type="button" class="btn btn-danger">Quit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quit / Exit Confirmation Screen -->
+        <section id="quit-screen" class="overlay-screen hidden">
+            <div class="menu-card">
+                <img src="assets/logo.jpg" alt="Shop Logo" class="menu-logo">
+                <h2 class="menu-title">Shift Ended</h2>
+                <p id="quit-message" class="menu-subtitle">
+                    You exited the game. Click Play Again to open a new shift with Darrel.
+                </p>
+                <div class="menu-buttons">
+                    <button id="reopen-btn" type="button" class="btn btn-primary">Play Again</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
